@@ -82,6 +82,7 @@ a:hover>.ph img{transform:scale(1.04)}
 .link{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;border-bottom:1px solid var(--red);color:var(--red);padding-bottom:2px;align-self:flex-start;transition:letter-spacing .4s}
 .link:hover{letter-spacing:.04em}
 .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media (max-width:1024px){#tour-b .pair{grid-template-columns:1fr!important}#tour-b .ph{height:60vw!important}}
 
 /* pricing */
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
@@ -197,11 +198,11 @@ footer .l3{grid-column:11/span 2;display:flex;flex-direction:column;gap:6px;alig
   <div class="wrap">
     <div class="row">
       <a class="brand" href="#top"><b>한복지리지</b><small>Hanbok Jiliji · Busan</small></a>
-      <nav class="nav"><a href="#about">소개</a><a href="#rental">한복 대여</a><a href="#content">한복 콘텐츠</a><a href="#tour">한복 관광</a><a href="#pay">개인 결제</a></nav>
+      <nav class="nav"><a href="#about">소개</a><a href="#rental">한복 대여</a><a href="#content">한복 콘텐츠</a><a href="#tour-b">한복 관광</a><a href="#pay">개인 결제</a></nav>
       <div class="util"><a class="en" href="#">EN</a><a class="cta" href="#rental">예약하기</a></div>
       <button class="menu-btn" id="menuBtn">Menu</button>
     </div>
-    <nav class="mnav" id="mnav"><a href="#about">소개</a><a href="#rental">한복 대여</a><a href="#content">한복 콘텐츠</a><a href="#tour">한복 관광</a><a href="#pay">개인 결제</a></nav>
+    <nav class="mnav" id="mnav"><a href="#about">소개</a><a href="#rental">한복 대여</a><a href="#content">한복 콘텐츠</a><a href="#tour-b">한복 관광</a><a href="#pay">개인 결제</a></nav>
   </div>
 </header>
 
@@ -246,6 +247,14 @@ footer .l3{grid-column:11/span 2;display:flex;flex-direction:column;gap:6px;alig
   </div>
 </section>
 
+<section class="wrap" id="tour-b">
+  <div class="sechead rv"><div class="t"><span class="eyebrow">Hanbok Tour · Yeongdo, Busan</span><h2>한복을 입고 걷는 부산,<br>영도에서 아테네까지</h2></div><span class="ital" style="font-size:16px;letter-spacing:.16em;color:var(--muted)">Fan tour ₩300,000</span></div>
+  <div class="pair" style="grid-template-columns:7fr 5fr;align-items:stretch">
+    <div class="ph rv l" style="height:620px"><img src="assets/ai-gwangan.jpg" alt="광안리 해변을 걷는 한복 일행" style="object-position:50% 50%" loading="lazy"></div>
+    <div style="display:flex;flex-direction:column;gap:24px"><div class="ph rv r" style="flex:1"><img src="assets/ai-yeongdo-bridge.jpg" alt="영도대교" style="object-position:50% 50%" loading="lazy"></div><div class="ph rv r" data-d="1" style="flex:1"><img src="assets/roof-1.jpg" alt="광안대교를 배경으로 팻말을 든 모델" style="object-position:50% 45%" loading="lazy"></div></div>
+  </div>
+</section>
+
 <section class="wrap" id="rental">
   <div class="sechead rv"><div class="t"><span class="eyebrow">Rental &amp; Experience</span><h2>대여 · 체험 · 투어</h2></div></div>
   <div class="cards">
@@ -268,16 +277,16 @@ footer .l3{grid-column:11/span 2;display:flex;flex-direction:column;gap:6px;alig
       <a class="row" href="#" data-i="3"><span class="t">부산외국어대학교 MOU 체결</span><span class="c">국내사업</span></a>
     </div>
     <div class="vis rv" data-d="1" id="pfvis">
-      <div class="ph on"><img src="assets/sky-sit.jpg" alt="" style="object-position:50% 30%" loading="lazy"></div>
-      <div class="ph"><img src="assets/green-34.jpg" alt="" style="object-position:50% 25%" loading="lazy"></div>
-      <div class="ph"><img src="assets/green-sit34.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div>
-      <div class="ph"><img src="assets/green-sitlook.jpg" alt="" style="object-position:50% 35%" loading="lazy"></div>
+      <div class="ph on"><img src="assets/ai-runway.jpg" alt="" style="object-position:50% 40%" loading="lazy"></div>
+      <div class="ph"><img src="assets/ai-athens.jpg" alt="" style="object-position:50% 50%" loading="lazy"></div>
+      <div class="ph"><img src="assets/ai-gwangan.jpg" alt="" style="object-position:50% 50%" loading="lazy"></div>
+      <div class="ph"><img src="assets/ai-workshop.jpg" alt="" style="object-position:50% 50%" loading="lazy"></div>
     </div>
   </div>
 </section>
 
 <section class="wrap ask" id="ask">
-  <div class="ph rv l"><img src="assets/green-34.jpg" alt="원삼을 입은 모델 반측면" style="object-position:50% 20%" loading="lazy"></div>
+  <div class="ph rv l"><img src="assets/ai-yeongdo-village.jpg" alt="흰여울문화마을을 걷는 한복" style="object-position:50% 50%" loading="lazy"></div>
   <div class="side">
     <div class="sechead rv" style="margin-bottom:0"><div class="t"><span class="eyebrow">Ask Hanbok Jiliji</span><h2>무엇이든 물어보세요</h2></div></div>
     <div class="chat rv" data-d="1" data-chat style="flex:1">
@@ -298,7 +307,7 @@ footer .l3{grid-column:11/span 2;display:flex;flex-direction:column;gap:6px;alig
 <footer id="pay">
   <div class="co"><b>한복지리지</b><span>한.미.녀 (한복에 미친 女자) · 대표 유미나</span><span>부산 영도구 봉래나루로 33 부산관광기업지원센터 1층 106호</span><a href="tel:01086471005">010-8647-1005</a></div>
   <div class="l1"><a href="#about">소개</a><a href="#rental">한복 대여</a><a href="#content">한복 콘텐츠</a></div>
-  <div class="l2"><a href="#tour">한복 관광</a><a href="#pay">개인 결제</a><a href="#">English</a></div>
+  <div class="l2"><a href="#tour-b">한복 관광</a><a href="#pay">개인 결제</a><a href="#">English</a></div>
   <div class="l3"><a href="#">Instagram</a><a href="#">Naver Blog</a><span>© 2026 Hanbok Jiliji</span></div>
 </footer>
 

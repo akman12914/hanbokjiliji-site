@@ -42,10 +42,27 @@ img,video{display:block;max-width:100%}
 
 /* sections */
 section{padding-top:140px}
-.about{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:end;padding-top:96px}
-.about .label{grid-column:1/span 2;color:var(--muted)}
-.about p{grid-column:3/span 7;margin:0;font-size:clamp(22px,2.4vw,34px);font-weight:500;line-height:1.35;letter-spacing:-.02em}
-.about .est{grid-column:11/span 2;justify-self:end;color:var(--muted);font-weight:400}
+.about{padding-top:120px}
+.about-top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:end}
+.about-top .label{grid-column:1/span 2}
+.about-top p{grid-column:3/span 6;margin:0;font-size:clamp(22px,2.4vw,34px);font-weight:500;line-height:1.35;letter-spacing:-.02em}
+.stats{grid-column:10/span 3;display:flex;flex-direction:column;gap:14px;border-left:1px solid var(--ink);padding-left:24px}
+.stats div{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.stats b{font-family:'Archivo',sans-serif;font-weight:800;font-size:28px;letter-spacing:-.03em}
+.stats span{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.tl{margin-top:96px;position:relative}
+.tl-line{position:absolute;left:0;right:0;top:92px;height:1px;background:var(--line)}
+.tl-line i{display:block;height:100%;width:0;background:var(--ink);transition:width 2.4s var(--ease) .2s}
+.tl.in .tl-line i{width:100%}
+.tl-items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px}
+.tl-items li{display:flex;flex-direction:column;gap:8px;position:relative;opacity:0;transform:translateY(16px);transition:all .9s var(--ease)}
+.tl.in .tl-items li{opacity:1;transform:none}
+.tl.in .tl-items li:nth-child(2){transition-delay:.25s}.tl.in .tl-items li:nth-child(3){transition-delay:.5s}.tl.in .tl-items li:nth-child(4){transition-delay:.75s}.tl.in .tl-items li:nth-child(5){transition-delay:1s}.tl.in .tl-items li:nth-child(6){transition-delay:1.25s}
+.tl .yr{font-family:'Archivo',sans-serif;font-weight:800;font-size:56px;line-height:1;letter-spacing:-.04em;height:70px}
+.tl .dot{width:9px;height:9px;background:var(--ink);border-radius:50%;margin:14px 0 18px;position:relative;z-index:1}
+.tl-items li:nth-child(6) .dot{background:var(--accent)}
+.tl b{font-size:15px;font-weight:500;line-height:1.5}
+.tl small{font-size:12px;line-height:1.7;color:var(--muted)}
 .head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:end;border-top:1px solid var(--ink);padding-top:24px;margin-bottom:40px}
 .head .num{grid-column:1/span 2;font-family:'Archivo',sans-serif;font-weight:800;font-size:64px;line-height:1;letter-spacing:-.04em}
 .head .ttl{grid-column:3/span 5;display:flex;flex-direction:column;gap:10px}
@@ -136,7 +153,7 @@ footer .links{display:flex;gap:24px;font-family:'Archivo',sans-serif;letter-spac
   .mnav{display:none;flex-direction:column;gap:14px;padding:4px 0 20px;font-size:16px;font-weight:500}
   .mnav.open{display:flex}
   section{padding-top:96px}
-  .about{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+  .about-top{display:flex;flex-direction:column;gap:16px;align-items:flex-start}.stats{border-left:0;padding-left:0;flex-direction:row;flex-wrap:wrap;gap:24px}.tl-items{grid-template-columns:repeat(2,minmax(0,1fr))}.tl-line{display:none}.tl .yr{font-size:40px;height:50px}
   .head{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
   .head .num{font-size:48px}
   .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -176,9 +193,26 @@ footer .links{display:flex;gap:24px;font-family:'Archivo',sans-serif;letter-spac
 </section>
 
 <section class="wrap about" id="about">
-  <span class="label rv">About</span>
-  <p class="rv" data-d="1">한복에 미친 女자, 한.미.녀.<br>부산 영도에서 대여와 체험, 교육과 패션쇼, 관광까지<br>한복이 머무는 모든 자리를 안내합니다.</p>
-  <span class="label est rv" data-d="2">Est. Busan</span>
+  <div class="about-top">
+    <span class="label rv" style="color:var(--muted)">About · Since 2024</span>
+    <p class="rv" data-d="1">한복에 미친 女자, 한.미.녀.<br>부산 영도에서 대여와 체험, 교육과 패션쇼, 관광까지<br>한복이 머무는 모든 자리를 안내합니다.</p>
+    <div class="stats rv" data-d="2">
+      <div><b data-count="6">0</b><span>Projects</span></div>
+      <div><b data-count="2">0</b><span>Countries</span></div>
+      <div><b data-count="50000" data-prefix="₩">0</b><span>Rental from</span></div>
+    </div>
+  </div>
+  <div class="tl rv" data-d="2">
+    <div class="tl-line"><i></i></div>
+    <ol class="tl-items">
+      <li><span class="yr">2024</span><span class="dot"></span><b>영도에서 시작</b><small>부산관광기업지원센터 입주 · 한복 대여·체험 오픈</small></li>
+      <li><span class="yr">2025</span><span class="dot"></span><b>글로벌 K-컬처 페스티벌</b><small>부산 한복 패션 위크 · 국내사업</small></li>
+      <li><span class="yr">2025</span><span class="dot"></span><b>2025 한복 어워즈</b><small>한복 패션쇼 · 콘텐츠</small></li>
+      <li><span class="yr">2025</span><span class="dot"></span><b>아테네, 주그리스 대사관</b><small>독립기념일 행사 참여 · 국외사업</small></li>
+      <li><span class="yr">2025</span><span class="dot"></span><b>부산 마이스 얼라이언스 · 부산외대 MOU</b><small>협력 네트워크 확장</small></li>
+      <li><span class="yr">2026</span><span class="dot"></span><b>스프링 런웨이</b><small>03.28 한복패션쇼 · 모델 모집 중</small></li>
+    </ol>
+  </div>
 </section>
 
 <section class="wrap" id="rental">
@@ -208,7 +242,7 @@ footer .links{display:flex;gap:24px;font-family:'Archivo',sans-serif;letter-spac
   </div>
   <div class="grid g12" style="align-items:end">
     <a class="card rv" style="grid-column:1/span 5" href="#pay"><div class="ph" style="height:700px"><img src="assets/red-front.jpg" alt="다홍 활옷" style="object-position:50% 20%" loading="lazy"></div><div class="cap"><b>한미녀 한복패션쇼</b><span>Runway</span></div></a>
-    <a class="card rv" data-d="1" style="grid-column:6/span 4" href="#pay"><div class="ph" style="height:520px"><img src="assets/green-close.jpg" alt="원삼 클로즈업" style="object-position:50% 24%" loading="lazy"></div><div class="cap"><b>콘텐츠 교육</b><span>Education</span></div></a>
+    <a class="card rv" data-d="1" style="grid-column:6/span 4" href="#pay"><div class="ph" style="height:520px"><img src="assets/ai-workshop.jpg" alt="한복 콘텐츠 교육 워크숍" style="object-position:50% 50%" loading="lazy"></div><div class="cap"><b>콘텐츠 교육</b><span>Education</span></div></a>
     <a class="card rv" data-d="2" style="grid-column:10/span 3" href="#pay"><div class="ph" style="height:380px"><img src="assets/green-sitlook.jpg" alt="원삼 앉은 정면" style="object-position:50% 35%" loading="lazy"></div><div class="cap"><b>행사 · 이벤트</b><span>Event</span></div></a>
   </div>
 </section>
@@ -229,9 +263,9 @@ footer .links{display:flex;gap:24px;font-family:'Archivo',sans-serif;letter-spac
     <div class="filters" id="filters"><span class="on" data-f="all">All</span><span data-f="kr">국내사업</span><span data-f="os">국외사업</span></div>
   </div>
   <div class="grid g4" id="pf">
-    <a class="card rv" data-cat="kr" href="#"><div class="ph" style="height:400px"><img src="assets/green-profile.jpg" alt="원삼 옆모습" style="object-position:50% 24%" loading="lazy"></div><span class="tag label" style="font-weight:400;color:var(--muted)">국내사업 · Busan</span><b style="font-weight:500;font-size:15px;line-height:1.5">글로벌 K-컬처 페스티벌<br>부산 한복 패션 위크</b></a>
-    <a class="card rv" data-d="1" data-cat="os" href="#"><div class="ph" style="height:400px"><img src="assets/green-34.jpg" alt="원삼 반측면" style="object-position:50% 25%" loading="lazy"></div><span class="tag label" style="font-weight:400;color:var(--muted)">국외사업 · Athens</span><b style="font-weight:500;font-size:15px;line-height:1.5">주그리스 대한민국 대사관<br>독립기념일 행사 참여</b></a>
-    <a class="card rv" data-d="2" data-cat="kr" href="#"><div class="ph" style="height:400px"><img src="assets/green-sit34.jpg" alt="원삼 앉은 반측면" style="object-position:50% 40%" loading="lazy"></div><span class="tag label" style="font-weight:400;color:var(--muted)">국내사업 · Busan</span><b style="font-weight:500;font-size:15px;line-height:1.5">부산 마이스 얼라이언스<br>가입</b></a>
+    <a class="card rv" data-cat="kr" href="#"><div class="ph" style="height:400px"><img src="assets/ai-runway.jpg" alt="한복 패션쇼 런웨이" style="object-position:50% 40%" loading="lazy"></div><span class="tag label" style="font-weight:400;color:var(--muted)">국내사업 · Busan</span><b style="font-weight:500;font-size:15px;line-height:1.5">글로벌 K-컬처 페스티벌<br>부산 한복 패션 위크</b></a>
+    <a class="card rv" data-d="1" data-cat="os" href="#"><div class="ph" style="height:400px"><img src="assets/ai-athens.jpg" alt="아테네 아크로폴리스를 바라보는 한복" style="object-position:50% 50%" loading="lazy"></div><span class="tag label" style="font-weight:400;color:var(--muted)">국외사업 · Athens</span><b style="font-weight:500;font-size:15px;line-height:1.5">주그리스 대한민국 대사관<br>독립기념일 행사 참여</b></a>
+    <a class="card rv" data-d="2" data-cat="kr" href="#"><div class="ph" style="height:400px"><img src="assets/ai-gwangan.jpg" alt="광안리 해변을 걷는 한복 일행" style="object-position:50% 50%" loading="lazy"></div><span class="tag label" style="font-weight:400;color:var(--muted)">국내사업 · Busan</span><b style="font-weight:500;font-size:15px;line-height:1.5">부산 마이스 얼라이언스<br>가입</b></a>
     <a class="card rv" data-d="3" data-cat="kr" href="#"><div class="ph" style="height:400px"><img src="assets/green-sitfront.jpg" alt="원삼 앉은 정면" style="object-position:50% 40%" loading="lazy"></div><span class="tag label" style="font-weight:400;color:var(--muted)">국내사업 · Busan</span><b style="font-weight:500;font-size:15px;line-height:1.5">부산외국어대학교<br>MOU 체결</b></a>
   </div>
 </section>
@@ -243,24 +277,10 @@ footer .links{display:flex;gap:24px;font-family:'Archivo',sans-serif;letter-spac
     <p>한복을 입고 걷는 부산, 영도에서 아테네까지. 팬투어 ₩300,000, 외국인 참가자 환영, 영문 안내 가능.</p>
   </div>
   <div class="grid g12" style="align-items:stretch">
-    <a class="card rv" style="grid-column:1/span 5" href="#pay"><div class="ph" style="height:640px"><img src="assets/roof-2.jpg" alt="부산 옥상에서 팻말을 들어올린 모델" style="object-position:50% 40%" loading="lazy"></div><div class="cap"><b>한미녀 팬투어</b><span>Busan</span></div></a>
-    <a class="card rv" data-d="1" style="grid-column:6/span 4" href="#pay"><div class="ph" style="height:640px"><img src="assets/roof-1.jpg" alt="광안대교를 배경으로 팻말을 든 모델" style="object-position:50% 45%" loading="lazy"></div><div class="cap"><b>광안대교 · 해운대</b><span>Gwangan</span></div></a>
+    <a class="card rv" style="grid-column:1/span 5" href="#pay"><div class="ph" style="height:640px"><img src="assets/ai-yeongdo-village.jpg" alt="흰여울문화마을을 걷는 한복" style="object-position:50% 50%" loading="lazy"></div><div class="cap"><b>흰여울문화마을 · 영도</b><span>Yeongdo</span></div></a>
+    <a class="card rv" data-d="1" style="grid-column:6/span 4" href="#pay"><div class="ph" style="height:640px"><img src="assets/roof-2.jpg" alt="부산 옥상에서 팻말을 들어올린 모델" style="object-position:50% 40%" loading="lazy"></div><div class="cap"><b>한미녀 팬투어</b><span>Busan</span></div></a>
     <div style="grid-column:10/span 3;display:flex;flex-direction:column;gap:24px">
-      <div class="box rv" data-d="2" style="flex:1;justify-content:space-between">
-        <span class="label" style="letter-spacing:.26em">Yeongdo · 영도</span>
-        <svg class="draw" viewBox="0 0 300 150" width="100%" role="img" aria-label="영도대교와 봉래산, 흰여울마을 선 그림">
-          <g fill="none" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M0,100 C40,80 70,45 115,52 C150,57 165,88 200,86 C235,84 260,66 300,72"/>
-            <path d="M20,118 L20,86 M36,118 L36,80 M52,118 L52,84 M68,118 L68,88 M28,86 L44,86 M44,80 L60,80"/>
-            <path d="M90,118 L280,118 M100,118 L100,106 M120,118 L120,106 M150,118 L150,102 M180,118 L180,106 M210,118 L210,108 M240,118 L240,106 M270,118 L270,108"/>
-            <path d="M165,104 L225,104 L225,96 L165,96 Z"/><path d="M168,96 L180,78 L210,78 L222,96"/><path d="M205,78 L200,58 L190,58 L185,78"/>
-            <path d="M0,132 C50,129 100,135 150,132 C200,129 250,135 300,132"/><path d="M0,142 C50,139 100,145 150,142 C200,139 250,145 300,142"/>
-            <circle cx="260" cy="28" r="9"/>
-          </g>
-          <circle cx="150" cy="96" r="3" fill="#1f3fa3"/>
-        </svg>
-        <small>영도대교 · 흰여울문화마을 · 봉래산<br>봉래나루로 33에서 출발</small>
-      </div>
+      <a class="card rv" data-d="2" href="#pay" style="flex:1"><div class="ph" style="height:340px"><img src="assets/ai-yeongdo-bridge.jpg" alt="영도대교와 한복" style="object-position:50% 50%" loading="lazy"></div><div class="cap"><b>영도대교</b><span>Dusk</span></div></a>
       <div class="box rv" data-d="3">
         <span class="label" style="letter-spacing:.26em">Busan → Athens</span>
         <svg class="draw" viewBox="0 0 300 90" width="100%" role="img" aria-label="부산에서 아테네로 이어지는 경로">
@@ -359,6 +379,9 @@ let tick=false;
 function para(){ const h=innerHeight; paras.forEach(el=>{const r=el.parentElement.getBoundingClientRect();const p=(r.top+r.height/2-h/2)/h;el.style.transform='scale(1.12) translateY('+(p*-el.dataset.para*100)+'px)';}); tick=false; }
 addEventListener('scroll',()=>{if(!tick){requestAnimationFrame(para);tick=true;}},{passive:true}); para();
 
+/* counters */
+const cio=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;cio.unobserve(en.target);const el=en.target,to=+el.dataset.count,pre=el.dataset.prefix||'',t0=performance.now();(function st(t){const p=Math.min(1,(t-t0)/1600),e=1-Math.pow(1-p,3);el.textContent=pre+Math.round(to*e).toLocaleString();if(p<1)requestAnimationFrame(st);})(t0);}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 /* portfolio filter */
 document.getElementById('filters').addEventListener('click',e=>{const s=e.target.closest('span');if(!s)return;
   document.querySelectorAll('#filters span').forEach(x=>x.classList.toggle('on',x===s));
